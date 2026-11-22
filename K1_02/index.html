@@ -13,7 +13,10 @@
     confirmation after a successful submission.
   </p>
 
-  <form action="" method="post" enctype="multipart/form-data">
+  <h2 id="output"></h2>
+
+  <form id="submissionForm" action="" method="post" enctype="multipart/form-data"
+  novalidate onsubmit="return validateForm(this)">
     <h2>Paper information</h2>
 
     <label for="title">Title</label>
@@ -41,5 +44,7 @@
       <button type="reset">Reset</button>
     </p>
   </form>
+
+  <script src="script.js"></script>
 </body>
 </html>
