@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Paper Submission</title>
+</head>
+<body>
+  <h1>International Conference on Web Technologies 2027</h1>
+  <p>
+    Welcome! Please submit your paper using the form below. Papers must be
+    original work and submitted as a single PDF. Fill in all required fields,
+    upload your PDF and press <strong>Submit</strong>. You will receive a
+    confirmation after a successful submission.
+  </p>
+
+  <div id="output"></div>
+
+  <form id="submissionForm" action="confirmation.html" method="post"
+      enctype="multipart/form-data" novalidate
+      onsubmit="return validation(this)">
+    <h2>Paper information</h2>
+
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" required minlength="5" maxlength="150">
+    <br>
+
+    <label for="abstract">Abstract</label><br>
+    <textarea name="abstract" id="abstract" rows="8" cols="60"
+              required minlength="50" maxlength="2000"></textarea>
+    <br>
+    <label for="keywords">Keywords (comma-separated)</label>
+    <input type="text" name="keywords" id="keywords" required
+       placeholder="e.g. web, javascript, validation">
+    <br>
+
+    <h2>Authors</h2>
+    <div id="authors">
+      <div class="author-row">
+        <strong class="author-number">Author 1</strong><br>
+        <label>Name <input type="text" name="author"></label>
+        <label>Affiliation <input type="text" name="affiliation"></label>
+        <label>Email <input type="email" name="email"></label>
+        <button type="button" class="remove-author">Remove</button>
+      </div>
+    </div>
+    <button type="button" id="add-author">Add author</button>
+
+    <h2>Paper file</h2>
+    <label for="paper">PDF file</label>
+    <input type="file" name="paper" id="paper" accept="application/pdf" required>
+
+    <p>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </p>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
